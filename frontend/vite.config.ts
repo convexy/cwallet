@@ -6,6 +6,6 @@ export default {
     }
   },
   build: {
-    outDir: "./../backend/public"
+    outDir: "./../backend/build/public"
   }
 };

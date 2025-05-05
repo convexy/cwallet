@@ -10,6 +10,11 @@ app.get("/api/xxx", (req, res) => {
   res.json({ message: "Hello!" });
 });
 
+// app.get("*", (req, res) => {
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
