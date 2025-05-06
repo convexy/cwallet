@@ -19,9 +19,10 @@ model Wallet {
 }
 
 model TransactionRecord {
-  id     Int      @id @default(autoincrement())
-  date   DateTime
-  type   String
-  amount Int
-  note   String?
+  id        Int      @id @default(autoincrement())
+  date      DateTime
+  type      String
+  amount    Int
+  note      String?
+  reflected Boolean  @default(false)
 }
