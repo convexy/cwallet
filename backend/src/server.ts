@@ -1,11 +1,14 @@
 import express from "express";
 import path from "path";
+import cors from "cors";
 import { PrismaClient } from "@prisma/client";
 
 const app = express();
 const port = 8080;
 const prisma = new PrismaClient();
 
+app.use(cors());
+app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/api/xxx", (req, res) => {
@@ -16,8 +19,7 @@ app.post("/api/user/register", async (req, res) => {
   const { name, email, password } = req.body;
   try {
     const user = await prisma.user.create({
-      data: { name: name, email: email, password: password, }
-      // data: { name, email, password }
+      data: { name, email, password }
     });
     res.json(user);
   }
