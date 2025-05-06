@@ -11,17 +11,13 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/api/xxx", (req, res) => {
-  res.json({ message: "Hello!" });
-});
-
-app.post("/api/user/register", async (req, res) => {
-  const { name, email, password } = req.body;
+app.post("/api/transaction/register", async (req, res) => {
+  const { date, type, amount, note } = req.body;
   try {
-    const user = await prisma.user.create({
-      data: { name, email, password }
+    const transaction = await prisma.transactionRecord.create({
+      data: { date: new Date(date), type, amount, note }
     });
-    res.json(user);
+    res.json(transaction);
   }
   catch (err) {
     res.status(400).json({ error: "Register faild.", details: (err as Error).message });
