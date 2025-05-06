@@ -1,7 +1,8 @@
 {
   "scripts": {
+    "changedb": "prisma migrate dev",
     "dev": "ts-node-dev src/server.ts",
-    "build": "tsc",
+    "build": "prisma generate && tsc",
     "start": "node build/server.js"
   },
   "dependencies": {

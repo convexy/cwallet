@@ -1,5 +1,5 @@
 <template>
-  <h1>Hello!</h1>
+  <h1>Welcome to CWallet!</h1>
 </template>
 
 <script>
@@ -10,6 +10,6 @@ export default {
 
 <style scoped>
 h1 {
-  color: #42b983;
+  color: darkseagreen;
 }
 </style>
