@@ -36,6 +36,9 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+p {
+  margin: 1px;
+}
 h1 {
   color: darkseagreen;
   width: 100%;
